@@ -15,10 +15,7 @@ use App\Http\Controllers\DirectorioController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/enlistar', [DirectorioController::class,'index'])->name('directorio.index');
+Route::get('/', [DirectorioController::class,'index'])->name('directorio.index');
 
 Route::get('/nuevo', [DirectorioController::class,'nuevo'])->name('directorio.nuevo');
 Route::post('/guardar', [DirectorioController::class,'guardar'])->name('directorio.guardar');
